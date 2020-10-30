@@ -15,7 +15,7 @@ Database Name:  __testimony__
 
 [How to deploy the API to Heroku - Documentation](documentation/heroku-deploy-documentation/heroku-deploy-documentation.md) link.
 
-The API is accessed from the URL: __https://testimony-api.herokuapp.com__
+For testing you can use the staging version of the API.: __https://raise-the-voices.herokuapp.com/v1/__
 
 Example: Create a new user:
 ![Create a new user](new_user.png "New user")

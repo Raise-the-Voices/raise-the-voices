@@ -53,7 +53,7 @@ func main() {
 // database tables migration
 func databaseTablesMigration() {
 
-	erroDB := database.GetDB().AutoMigrate(&models.Report{}, &models.Victim{}, &models.Incident{},
+	erroDB := database.GetDB().Debug().AutoMigrate(&models.Report{}, &models.Victim{}, &models.Incident{},
 		&models.VictimMedia{}, &models.IncidentMedia{}, &models.VictimTranslation{}, &models.IncidentTranslation{},
 		&models.User{}, &models.ResetPassword{}).Error
 

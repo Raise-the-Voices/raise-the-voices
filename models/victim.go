@@ -121,9 +121,10 @@ func GetSpecificVictim(idvictim uint, isAuthorizedRequest bool) (map[string]inte
 		return response, 404
 	}
 
-	if !isAuthorizedRequest {
-		specificVictim.DateOfBirth = nil
-	}
+	// This feature was requested by Feedback but we don't have a frontend to implement it.
+	// if !isAuthorizedRequest {
+	// 	specificVictim.DateOfBirth = nil
+	// }
 
 	response :=
 		map[string]interface{}{
@@ -143,11 +144,13 @@ func SearchVictimbyName(victimName string, isAuthorizedRequest bool) (map[string
 		response := u.Message("Victim not found")
 		return response, 404
 	}
-	if !isAuthorizedRequest {
-		for i := 0; i < len(*specificVictim); i++ {
-			(*specificVictim)[i].DateOfBirth = nil
-		}
-	}
+	// This feature was requested by Feedback but we don't have a frontend to implement it.
+	// if !isAuthorizedRequest {
+	// 	for i := 0; i < len(*specificVictim); i++ {
+	// 		(*specificVictim)[i].DateOfBirth = nil
+	// 	}
+	// }
+
 	response :=
 		map[string]interface{}{
 			"victim": specificVictim,
@@ -164,11 +167,12 @@ func SearchVictimbyFilter(structFilter *SearchFilter, isAuthorizedRequest bool) 
 	if victimsList, successQuery = queryWhere((*structFilter).ReportState, (*structFilter).Sort, queryToDB, argsWhere...); !successQuery {
 		return u.Message("Some column in the database does not exist"), 404
 	}
-	if !isAuthorizedRequest {
-		for i := 0; i < len(*victimsList); i++ {
-			(*victimsList)[i].DateOfBirth = nil
-		}
-	}
+	// This feature was requested by Feedback but we don't have a frontend to implement it.
+	// if !isAuthorizedRequest {
+	// 	for i := 0; i < len(*victimsList); i++ {
+	// 		(*victimsList)[i].DateOfBirth = nil
+	// 	}
+	// }
 	response :=
 		map[string]interface{}{
 			"victim": victimsList,
@@ -204,11 +208,12 @@ func GetAllVictims(isAuthorizedRequest bool) (map[string]interface{}, uint) {
 		response := u.Message("Victims not found")
 		return response, 404
 	}
-	if !isAuthorizedRequest {
-		for i := 0; i < len(*victimsList); i++ {
-			(*victimsList)[i].DateOfBirth = nil
-		}
-	}
+	// This feature was requested by Feedback but we don't have a frontend to implement it.
+	// if !isAuthorizedRequest {
+	// 	for i := 0; i < len(*victimsList); i++ {
+	// 		(*victimsList)[i].DateOfBirth = nil
+	// 	}
+	// }
 	response :=
 		map[string]interface{}{
 			"victims": victimsList,

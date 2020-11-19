@@ -2,6 +2,7 @@ package database
 
 import (
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/jinzhu/gorm"
@@ -20,8 +21,13 @@ func init() {
 		fmt.Print(e)
 	}
 
-	dbURI := fmt.Sprintf("host=%s user=%s dbname=%s sslmode=disable password=%s", os.Getenv("db_host"), os.Getenv("db_user"), os.Getenv("db_name"), os.Getenv("db_pass"))
-
+	// DB config reading
+	dbURI := os.Getenv("DATABASE_URL")
+	log.Println(dbURI)
+	if dbURI == "" {
+		dbURI = fmt.Sprintf("host=%s user=%s dbname=%s sslmode=disable password=%s", os.Getenv("db_host"), os.Getenv("db_user"), os.Getenv("db_name"), os.Getenv("db_pass"))
+	}
+	log.Println(dbURI)
 	conn, err := gorm.Open(os.Getenv("db_type"), dbURI)
 	if err != nil {
 		fmt.Print(err)

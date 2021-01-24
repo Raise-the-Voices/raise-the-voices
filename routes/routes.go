@@ -164,6 +164,17 @@ func Routes() *mux.Router {
 	// Reset Password from a user
 	s.Handle("/password/reset", tollbooth.LimitFuncHandler(limiter, controllers.ResetPassword)).Methods("POST")
 
+	// -------------------Options Routes-----------------------------
+
+	// Add a new option.
+	s.Handle("/options", tollbooth.LimitFuncHandler(limiter, controllers.AddOptionController)).Methods("POST")
+
+	// Delete an option.
+	s.Handle("/options/{optionid}", tollbooth.LimitFuncHandler(limiter, controllers.DeleteOptionController)).Methods("DELETE")
+
+	// Get all options.
+	s.Handle("/options", tollbooth.LimitFuncHandler(limiter, controllers.GetAllOptionsController)).Methods("GET")
+
 	// -------------------Error Routes---------------------------------------
 
 	// if there was not a router found this trigger this error route.

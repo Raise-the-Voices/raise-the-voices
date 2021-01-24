@@ -55,7 +55,7 @@ func databaseTablesMigration() {
 
 	erroDB := database.GetDB().Debug().AutoMigrate(&models.Report{}, &models.Victim{}, &models.Incident{},
 		&models.VictimMedia{}, &models.IncidentMedia{}, &models.VictimTranslation{}, &models.IncidentTranslation{},
-		&models.User{}, &models.ResetPassword{}).Error
+		&models.User{}, &models.ResetPassword{}, &models.Options{}).Error
 
 	if erroDB != nil {
 		fmt.Println(erroDB)

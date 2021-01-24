@@ -91,3 +91,9 @@
     * [Read all media from a incident](incident-medias-endpoints-documentation/read-all-media-from-incident.md) `Get /v1/incident-medias?idincident={incidentID}`
     * [Delete a specific incident media](incident-medias-endpoints-documentation/delete-incident-media.md) `Delete /v1/incident-medias/{idincident-media}`
     * [Upload Incident Media File in S3 (AWS)](incident-medias-endpoints-documentation/upload-incident-media.md) `Post /v1/incident-medias/upload`
+
+9. ### _Options Endpoints_
+
+    * [Add a new option](options-documentation/add-option.md) `Post /v1/options`
+    * [Get all options](options-documentation/get-all-options.md) `Get /v1/options`
+    * [Delete an option](options-documentation/delete-option.md) `Delete /v1/options/{optionid}`

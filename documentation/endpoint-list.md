@@ -37,6 +37,7 @@
     * [Update data from a report](report-endpoint-documentation/update-report-data.md) `Put /v1/reports/{idreport}`
     * [Read a report list](report-endpoint-documentation/read-report-list.md) `Get /v1/reports?state={varState}&offset={varOffset}&limit={varLimit}`
     * [Read a specific report](report-endpoint-documentation/read-specific-report.md) `Get /v1/reports?idreport={ParamVar}`
+    * [Read a specific report by victim-id](report-endpoint-documentation/read-specific-report-by-victim-id.md) `Get /v1/reports?victimID={ParamVar}`
     * [Read all reports](report-endpoint-documentation/read-all-reports.md) `Get /v1/reports`
     * [Delete a specific report](report-endpoint-documentation/delete-report.md) `Delete /v1/reports/{idreport}`
 

@@ -142,6 +142,24 @@ func GetSpecificReport(idreport uint) (map[string]interface{}, uint) {
 	return response, 200
 }
 
+// GetSpecificReportByVictimID get specific report by victim-id
+func GetSpecificReportByVictimID(victimID uint) (map[string]interface{}, uint) {
+
+	specificReport := &Report{}
+
+	err := database.GetDB().Table("reports").Where("victim_id = ?", victimID).First(&specificReport).Error
+	if err != nil {
+		response := u.Message("Report not found")
+		return response, 404
+	}
+
+	response :=
+		map[string]interface{}{
+			"report": specificReport,
+		}
+	return response, 200
+}
+
 // GetAllReport get all report
 func GetAllReport() (map[string]interface{}, uint) {
 

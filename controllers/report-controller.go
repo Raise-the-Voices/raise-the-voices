@@ -94,6 +94,17 @@ var GetReport = func(w http.ResponseWriter, r *http.Request) {
 		resp, status := models.GetSpecificReport(u.ConvertStringtoUint(urlValues.Get("idreport")))
 		u.Respond(w, resp, status)
 		break
+	case (len(urlValues) == 1 && urlValues.Get("victimID") != ""):
+
+		if !u.EvaluationNumberPattern(urlValues.Get("victimID"), false) {
+			response := u.Message("Params Error")
+			u.Respond(w, response, 400)
+			return
+		}
+
+		resp, status := models.GetSpecificReportByVictimID(u.ConvertStringtoUint(urlValues.Get("victimID")))
+		u.Respond(w, resp, status)
+		break
 	case len(urlValues) == 0:
 		resp, status := models.GetAllReport()
 		u.Respond(w, resp, status)

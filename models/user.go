@@ -381,6 +381,7 @@ func Login(email, password string) (map[string]interface{}, uint) {
 			"message": "Logged In",
 			"expires": expirationTime,
 			"role":    user.UserRole,
+			"name":    user.Name,
 		}
 
 	return response, 200

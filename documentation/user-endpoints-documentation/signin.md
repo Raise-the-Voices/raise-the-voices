@@ -17,7 +17,8 @@ Content:
         "expires": expirationTime,
         "message": "Logged In",
         "role": user-role,
-        "status" : 200
+        "status" : 200,
+        "name": user-name,
         "token":   tokenString,
        
 Example:
@@ -27,6 +28,7 @@ Example:
                 "message": "Logged In",
                 "role": "admin",
                 "status": 200,
+                "name": "Jesus Gonzalez",
                 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVyYWlzZXRoZXZvaWNlc0BnbWFpbC5jb20iLCJ1c2VyX3JvbGUiOiJhZG1pbiIsImV4cCI6MTU5NDk5MDY2MX0.qkc_weWIUgrT7awKFdHal1n-sw5Kl4wLRBgAag3gvpI"
         }
 

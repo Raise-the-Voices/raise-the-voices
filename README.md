@@ -33,6 +33,6 @@ Note:
 
         Name:     default
         Password: fX2Weey=y?*Z98&N
-        Email:    exampleraisethevoices@gmail.com
+        Email:    testimonies@raisethevoices.org
         Phone:    11111111111
         UserRole: admin

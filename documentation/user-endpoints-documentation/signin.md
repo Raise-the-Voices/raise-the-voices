@@ -6,7 +6,7 @@
 |  Header  | Content-Type: application/json |
 |  Body  | Example:
     {
-        "email": "exampleraisethevoices@gmail.com",
+        "email": "testimonies@raisethevoices.org",
         "password": "fX2Weey=y?*Z98&N"
     }
 | Success Response | Code: 200  |

@@ -66,7 +66,7 @@ func seed() {
 	userDefault := &models.User{
 		Name:     "default",
 		Password: "fX2Weey=y?*Z98&N",
-		Email:    "exampleraisethevoices@gmail.com",
+		Email:    "testimonies@raisethevoices.org",
 		Phone:    "11111111111",
 		UserRole: "admin",
 	}
@@ -74,7 +74,7 @@ func seed() {
 	hashedPassword, _ := bcrypt.GenerateFromPassword([]byte(userDefault.Password), bcrypt.DefaultCost)
 	userDefault.Password = string(hashedPassword)
 
-	database.GetDB().Where(models.User{Email: "exampleraisethevoices@gmail.com"}).FirstOrCreate(&userDefault)
+	database.GetDB().Where(models.User{Email: "testimonies@raisethevoices.org"}).FirstOrCreate(&userDefault)
 
 	if userDefault.ID <= 0 {
 		fmt.Printf("Failed to create account, connection error.\n")
